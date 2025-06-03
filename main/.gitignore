@@ -40,3 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Ignore sensitive config files
+service-account.json
+fit2095project.json
+``
