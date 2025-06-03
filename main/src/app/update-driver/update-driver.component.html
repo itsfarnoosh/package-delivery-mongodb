@@ -1,0 +1,53 @@
+<div class="container mt-4">
+  <h3 class="text-center text-primary">Update Driver</h3>
+
+  <!-- Error message display -->
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Form to update driver -->
+  <form (ngSubmit)="updateDriver()">
+    <!-- Driver ID -->
+    <div class="mb-3">
+      <label for="driverId" class="form-label">Driver MongoDB ID</label>
+      <input
+        type="text"
+        id="driverId"
+        class="form-control"
+        [(ngModel)]="driverId"
+        name="driverId"
+        placeholder="Enter Driver MongoDB ID"
+        required
+      />
+    </div>
+
+    <!-- Driver Licence -->
+    <div class="mb-3">
+      <label for="driverLicence" class="form-label">Driver Licence</label>
+      <input
+        type="text"
+        id="driverLicence"
+        class="form-control"
+        [(ngModel)]="driverLicence"
+        name="driverLicence"
+        placeholder="Enter Driver Licence"
+        required
+      />
+    </div>
+
+    <!-- Driver Department -->
+    <div class="mb-3">
+      <label for="driverDepartment" class="form-label">Driver Department</label>
+      <select id="driverDepartment" class="form-select" [(ngModel)]="driverDepartment" name="driverDepartment" required>
+        <option value="" disabled>Select Department</option>
+        <option value="Food">Food</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Electronic">Electronic</option>
+      </select>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary">Update Driver</button>
+  </form>
+</div>

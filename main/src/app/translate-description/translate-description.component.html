@@ -1,0 +1,53 @@
+<h2 class="text-center text-primary">Translate</h2>
+
+<div class="container mt-4">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Weight</th>
+        <th>Destination</th>
+        <th>Description</th>
+        <th>Translate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let package of packages">
+        <td>{{ package.package_id }}</td>
+        <td>{{ package.package_title }}</td>
+        <td>{{ package.package_weight }}</td>
+        <td>{{ package.package_destination }}</td>
+        <td>{{ package.description }}</td>
+        <td>
+          <button class="btn btn-success" (click)="translateDescription(package.description)">T</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container mt-4">
+  <label for="language">Target Language</label>
+  <select id="language" class="form-control" [(ngModel)]="selectedLanguage">
+    <option *ngFor="let language of languages" [value]="language.code">{{ language.name }}</option>
+  </select>
+</div>
+
+<h3 class="mt-4">Translation History</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Target Language</th>
+      <th>Translation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of translationHistory">
+      <td>{{ entry.text }}</td>
+      <td>{{ entry.targetLanguage }}</td>
+      <td>{{ entry.translation }}</td>
+    </tr>
+  </tbody>
+</table>

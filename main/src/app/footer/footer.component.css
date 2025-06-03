@@ -1,0 +1,12 @@
+/* Apply a hover effect on footer options */
+.footer-option {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.footer-option:hover {
+    transform: scale(1.1); /* Make the option bigger on hover */
+    background-color: #FFE9EC    ; /* Change background color on hover */
+}

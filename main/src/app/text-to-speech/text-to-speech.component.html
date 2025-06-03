@@ -1,0 +1,48 @@
+<!-- src/app/text-to-speech/text-to-speech.component.html -->
+<div class="card mt-4">
+    <div class="card-header text-center">
+      <h4>Text to Speech Converter</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>Driver Id</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>License</th>
+            <th>Speech</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let driver of drivers">
+            <td>{{ driver.driver_id }}</td>
+            <td>{{ driver.driver_name }}</td>
+            <td>{{ driver.driver_department }}</td>
+            <td>{{ driver.driver_licence }}</td>
+            <td>
+              <button class="btn btn-success" (click)="copyAndConvert(driver.driver_licence)">
+                S
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- Text to Convert Section -->
+      <div class="form-group mt-4">
+        <label for="textToConvert">Text to Convert</label>
+        <textarea id="textToConvert" class="form-control" rows="2" [(ngModel)]="textToConvert"></textarea>
+      </div>
+  
+      <!-- Audio Output Section -->
+      <div class="form-group mt-4">
+        <label>Converted Speech:</label>
+        <audio *ngIf="audioUrl" controls>
+          <source [src]="audioUrl" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+  </div>
+  

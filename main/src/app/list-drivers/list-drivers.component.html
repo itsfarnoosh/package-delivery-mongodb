@@ -1,0 +1,30 @@
+<h3 class="text-center text-primary mt-4">List of Drivers</h3>
+
+<div class="container mt-4">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>mongodb id</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>License</th>
+        <th>Active</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let driver of drivers">
+        <td>{{ driver._id }}</td> <!-- MongoDB _id -->
+        <td>{{ driver.driver_id }}</td> <!-- Custom driver_id -->
+        <td>{{ driver.driver_name | uppercase }}</td>
+        <td>{{ driver.driver_department }}</td>
+        <td>{{ driver.driver_licence }}</td>
+        <td>{{ driver.driver_isActive ? 'Yes' : 'No' }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteDriver(driver._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,69 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active" >Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- Show the following only if the user is logged in -->
+          <li class="nav-item dropdown" *ngIf="authService.isLoggedIn()">
+            <a class="nav-link dropdown-toggle" href="#" id="driverDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Driver Operations
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="driverDropdown">
+              <li><a class="dropdown-item" routerLink="/list-drivers" routerLinkActive="active">List Drivers</a></li>
+              <li><a class="dropdown-item" routerLink="/add-driver" routerLinkActive="active">Add Driver</a></li>
+              <li><a class="dropdown-item" routerLink="/delete-driver" routerLinkActive="active">Delete Driver</a></li>
+              <li><a class="dropdown-item" routerLink="/update-driver" routerLinkActive="active">Update Driver</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown" *ngIf="authService.isLoggedIn()">
+            <a class="nav-link dropdown-toggle" href="#" id="packageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Package Operations
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="packageDropdown">
+              <li><a class="dropdown-item" routerLink="/add-package" routerLinkActive="active">Add Package</a></li>
+              <li><a class="dropdown-item" routerLink="/list-packages" routerLinkActive="active">List Packages</a></li>
+              <li><a class="dropdown-item" routerLink="/delete-package" routerLinkActive="active">Delete Package</a></li>
+              <li><a class="dropdown-item" routerLink="/update-package" routerLinkActive="active">Update Package</a></li>
+            </ul>
+          </li>
+          
+          <!-- Google Services Dropdown -->
+          <li class="nav-item dropdown" *ngIf="authService.isLoggedIn()">
+            <a class="nav-link dropdown-toggle" href="#" id="googleServicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Google Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="googleServicesDropdown">
+              <li><a class="dropdown-item" routerLink="/text-to-speech" routerLinkActive="active">Text to Speech</a></li>
+              <li><a class="dropdown-item" routerLink="/translate-description" routerLinkActive="active">Translate Description</a></li>
+              <li><a class="dropdown-item" routerLink="/generative-ai" routerLinkActive="active">Generative AI</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item" *ngIf="authService.isLoggedIn()">
+            <a class="nav-link" routerLink="/statistics" routerLinkActive="active">Statistics</a>
+          </li>
+
+          <!-- Show the login/signup options if the user is not logged in -->
+          <li class="nav-item" *ngIf="!authService.isLoggedIn()">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+
+          <li class="nav-item" *ngIf="!authService.isLoggedIn()">
+            <a class="nav-link" routerLink="/signup" routerLinkActive="active">Signup</a>
+          </li>
+
+          <!-- Show logout when the user is logged in -->
+          <li class="nav-item" *ngIf="authService.isLoggedIn()">
+            <a class="nav-link" routerLink="/logout" routerLinkActive="active">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

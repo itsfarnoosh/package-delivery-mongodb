@@ -1,0 +1,39 @@
+/* General header styling */
+header {
+    background-color: #f8f9fa; /* Light background by default */
+    padding: 20px;
+    border: 2px solid #007bff; /* Blue border around the header */
+    border-radius: 10px; /* Add rounded corners */
+  }
+  
+  /* Menu item styling */
+  .navbar-nav .nav-link {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Hover effect for each menu item */
+  .navbar-nav .nav-link:hover {
+    transform: scale(1.2); /* Increase size when hovered */
+    background-color: #FFE9EC
+    ; /* Light pink background on hover */
+    color: #000; /* Optional: Change text color on hover */
+  }
+  
+  /* Show dropdown on hover */
+  .navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Optional: Adjust the dropdown's margin */
+  }
+  
+  /* Optional: Add transition to make the dropdown smoother */
+  .dropdown-menu {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+  }
+  
+  .navbar-nav .dropdown:hover .dropdown-menu {
+    opacity: 1;
+  }
+  

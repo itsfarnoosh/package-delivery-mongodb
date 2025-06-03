@@ -1,0 +1,18 @@
+<!-- app.component.html -->
+<div class="d-flex flex-column min-vh-100">
+    <app-header></app-header> <!-- Header Component -->
+    <main class="flex-grow-1">
+      <router-outlet></router-outlet> <!-- Router Outlet for Dynamic Content -->
+      <div class="home-box-container">
+        <div class="home-box">
+          <h2>Welcome to FIT2095 Management System</h2>
+          <p>This website allows users to manage drivers and packages efficiently. 
+             You can add, delete, and update drivers and packages, 
+             as well as access Google services such as text-to-speech, translation, and generative AI. 
+             <br> Login or sign up to get started!</p>
+        </div>
+      </div>
+      <app-footer></app-footer> <!-- Footer Component -->
+    </main>
+  </div>
+  

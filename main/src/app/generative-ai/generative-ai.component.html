@@ -1,0 +1,37 @@
+<h3 class="text-center text-primary mt-4">Distance Calculator</h3>
+
+<div class="container mt-4">
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="bg-primary text-white">
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Weight</th>
+        <th>Destination</th>
+        <th>Description</th>
+        <th>KMs to Melb</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through packages and display them -->
+      <tr *ngFor="let pkg of packages">
+        <td>{{ pkg._id }}</td>
+        <td>{{ pkg.package_title }}</td>
+        <td>{{ pkg.package_weight }}</td>
+        <td>{{ pkg.package_destination }}</td>
+        <td>{{ pkg.description }}</td>
+        <td>
+          <!-- Display the "Calculate" button -->
+          <button class="btn btn-info" (click)="calculateDistance(pkg.package_destination, pkg._id)">
+            Calculate
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Section to display the calculated distance for the selected package -->
+  <div class="alert alert-info text-center" *ngIf="selectedDistance">
+    <strong>Approximately {{ selectedDistance }} kilometers </strong>
+  </div>
+</div>

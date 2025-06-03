@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h3 class="text-center text-primary">Delete Driver</h3>
+
+  <!-- Error message display -->
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Form to delete driver -->
+  <form (ngSubmit)="deleteDriver()">
+    <div class="mb-3">
+      <label for="driverId" class="form-label">Enter MongoDB Driver ID</label>
+      <input
+        type="text"
+        id="driverId"
+        class="form-control"
+        [(ngModel)]="driverId"
+        name="driverId"
+        placeholder="Enter Driver MongoDB ID"
+        required
+      />
+    </div>
+
+    <!-- Submit button to delete driver -->
+    <button type="submit" class="btn btn-danger">Delete Driver</button>
+  </form>
+
+
+</div>
